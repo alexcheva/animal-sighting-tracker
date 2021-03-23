@@ -130,9 +130,12 @@ CREATE TABLE sightings (
 ```
 ## Sample Data:
 ``` sql
-INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ('bengal tiger', 'Panthera tigris tigris', 2500, 'EN', '2008-11-01');
-INSERT INTO individuals (nickname, record_created, species_id) VALUES ('spotty', '2008-05-02', 1);
-INSERT INTO sightings (seen, healthy, location, email, record_created, animal_id) VALUES ('2008-05-02', true, 'Asia', 'discover@wwl.com', '2010-09-03', 1);
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('bengal tiger', 'Panthera tigris tigris', 2500, 'EN', '2008-11-01');
+INSERT INTO individuals (nickname, record_created, species_id)
+ VALUES ('spotty', '2008-05-02', 1);
+INSERT INTO sightings (seen, healthy, location, email, record_created, animal_id)
+ VALUES ('2008-05-02', true, 'Asia', 'discover@wwl.com', '2010-09-03', 1);
 
 INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
   VALUES ('snow leopard', 'Panthera uncia', 5000, 'VU', '2008-11-01');
