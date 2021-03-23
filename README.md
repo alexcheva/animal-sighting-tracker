@@ -106,12 +106,12 @@ CREATE TABLE individuals (
 When scientists spot an individual they’re tracking, they want to store some information about the sighting in the database:
 #### Sightings 
 id - primary key unique<br />
-seen - timestapm (could be in the past)<br />
+seen - timestamp (could be in the past)<br />
 animal_id - integer foreign key<br />
 location - text<br />
 healthy - bool<br />
 email - text <br />
-created - timestapm<br />
+created - timestamp<br />
 
 
 ``` sql
@@ -119,6 +119,7 @@ CREATE TABLE sightings (
   id SERIAL PRIMARY KEY,
   seen TIMESTAMP,
   healthy BOOLEAN,
+  location TEXT,
   email TEXT CHECK(email LIKE '%@%') NULL,
   record_created TIMESTAMP,
   animal_id SERIAL NOT NULL,
@@ -127,3 +128,48 @@ CREATE TABLE sightings (
 			REFERENCES individuals(id)
 );
 ```
+## Sample Data:
+``` sql
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ('bengal tiger', 'Panthera tigris tigris', 2500, 'EN', '2008-11-01');
+INSERT INTO individuals (nickname, record_created, species_id) VALUES ('spotty', '2008-13-02', 1);
+INSERT INTO sightings (seen, healthy, email, record_created, animal_id) VALUES ('2008-13-02', true, 'Asia', 'discover@wwl.com', '2010-09-03', 1);
+
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ('snow leopard', 'Panthera uncia', 5000, 'VU', '2008-11-01');
+INSERT INTO individuals (nickname, record_created, species_id) VALUES ('majestic', '2008-13-02', 2);
+INSERT INTO sightings (seen, healthy, email, record_created, animal_id) VALUES ('2008-13-02', true, 'Mongolia', 'discover@wwl.com', '2010-09-03', 2);
+
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ('red panda', 'Ailurus fulgens', 10000, 'EN', '2008-11-01');
+INSERT INTO individuals (nickname, record_created, species_id) VALUES ('fiery queen', '2008-13-02', 3);
+INSERT INTO sightings (seen, healthy, email, record_created, animal_id) VALUES ('2008-13-02', true, 'China', 'discover@wwl.com', '2010-09-03', 3);
+```
+### Extra values to test inside the app:
+'polar-bear', 'Ursus maritimus', 25000, 'VU', '2008-11-01'  
+'mishka','2008-13-02', 4  
+'2008-13-02', true, 'Russia', 'discover@wwl.com', '2010-09-03', 4  
+
+'giant-panda', 'Ailuropoda melanoleuca', 2000, 'VU', '2008-11-01'  
+'bambi', '2008-13-02', 5  
+'2008-13-02', true, 'China', 'discover@wwl.com', '2010-09-03', 5  
+### Status Codes:
+CR, EN, VU\
+status: "Critically endangered"\
+abbreviation: "CR"\
+description: "Faces an extremely high risk of extinction in the immediate future."
+
+status: "Endangered"\
+abbreviation: "EN"\
+description: "Faces a high risk of extinction in the near future."
+
+status: "Vulnerable"\
+abbreviation: "VU"\
+description: "Faces a high risk of endangerment in the medium term."
+
+### Extra Endangered Species to add:
+blue-whale\
+asian-elephant\
+gorilla\
+orangutan\
+sea-turtle\
+black-rhino\
+african-penguin
+
