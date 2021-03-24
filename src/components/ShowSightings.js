@@ -5,7 +5,7 @@ function Sightings() {
   const [sightings, setSightings] = React.useState([]);
 
   function getSightings() {
-    fetch('http://localhost:9001/sightings').then(
+    fetch('http://localhost:9001/querySightings').then(
       res => res.json()
     ).then(
       data => setSightings(data)
@@ -24,14 +24,16 @@ function Sightings() {
       <table width="90%" align="center">
         <tr>
           <th>Animal Nickname:</th>
+          <th>Species:</th>
           <th>Seen on:</th>
           <th>Healthy:</th>
           <th>Location seen:</th>
           <th>Queries:</th>
         </tr>
-        {sightings.map(({ id, seen, healthy, location, email, record_created, animal_id }) =>
+        {sightings.map(({ id, nickname, common_name, seen, healthy, location, email, animal_id }) =>
           <tr key={id}>
-            <td>{animal_id}</td>
+            <td>{nickname}</td>
+            <td>{common_name}</td>
             <td>{new Date(seen).toDateString()}</td>
             <td>{healthy? "yes" : "no"}</td>
             <td>{location}</td>

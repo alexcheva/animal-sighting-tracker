@@ -44,6 +44,17 @@ app.get("/individuals", async (req, res) => {
   }
 });
 
+app.get("/queryIndividuals", async (req, res) => {
+  try {
+    const individual = await db.any(
+      "SELECT DISTINCT individuals.nickname, species.common_name, species.scientific_name, sightings.seen, sightings.healthy, sightings.location FROM individuals JOIN species ON individuals.species_id=species.id LEFT JOIN sightings ON individuals.id=sightings.animal_id ORDER BY individuals.nickname ASC;", [true]);
+    console.log({ individual });
+    res.json(individual);
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 app.get("/individuals/:id", async (req, res) => {
   try {
     const individual = await db.any(
@@ -66,7 +77,16 @@ app.get("/sightings", async (req, res) => {
     console.log(e);
   }
 });
-
+app.get("/querySightings", async (req, res) => {
+  try {
+    const individual = await db.any(
+      "SELECT individuals.nickname, species.common_name, sightings.seen, sightings.healthy, sightings.location, sightings.email FROM individuals JOIN species ON individuals.species_id=species.id JOIN sightings ON individuals.id=sightings.animal_id ORDER BY individuals.nickname ASC;", [true]);
+    console.log({ individual });
+    res.json(individual);
+  } catch (e) {
+    console.log(e);
+  }
+});
 app.get("/sightings/:id", async (req, res) => {
   try {
     const sighting = await db.any(
@@ -84,9 +104,9 @@ app.post('/', function (req, res) {
   res.send('POST request to the homepage')
 });
 
-app.post('/addAnimal', function (req, res) {
-  const animal = req.body;
-  db.none('INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ($1, $2, $3, $4, $5)', [animal.common_name, animal.scientific_name, animal.population, animal.status_code, animal.record_created])
+app.post('/addAnimal', async (req, res) => {
+  const {common_name, scientific_name, population, status_code, record_created} = req.body;
+  db.none('INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ($1, $2, $3, $4, $5)', [common_name, scientific_name, population, status_code, record_created])
   .then(() => {
       // success
       console.log('SUCCESS: User is added to the database')
@@ -98,8 +118,8 @@ app.post('/addAnimal', function (req, res) {
 });
 app.post('/addIndividual', function (req, res) {
   //res.send('POST request to the homepage')
-  const ind = req.body;
-  db.none('INSERT INTO individuals (nickname, record_created, species_id) values ($1,$2,$3)',[ind.nickname, ind.record_created, ind.species_id]).then(data => {
+  const {nickname, record_created, species_id} = req.body;
+  db.none('INSERT INTO individuals (nickname, record_created, species_id) values ($1,$2,$3)',[nickname, record_created, species_id]).then(data => {
       console.log("SUCCESS: Individual is added to the database"); // print new Individual id;
   })
   .catch(error => {
