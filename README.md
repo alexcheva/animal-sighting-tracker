@@ -152,13 +152,27 @@ INSERT INTO sightings (seen, healthy, location, email, record_created, animal_id
   VALUES ('2008-05-02', true, 'China', 'discover@wwl.com', '2010-09-03', 3);
 ```
 ### Extra values to test inside the app:
-'polar-bear', 'Ursus maritimus', 25000, 'VU', '2008-11-01'  
+'polar bear', 'Ursus maritimus', 25000, 'VU', '2008-11-01'  
 'mishka','2008-05-02', 4  
 '2008-05-02', true, 'Russia', 'discover@wwl.com', '2010-09-03', 4  
 
-'giant-panda', 'Ailuropoda melanoleuca', 2000, 'VU', '2008-11-01'  
+'giant panda', 'Ailuropoda melanoleuca', 2000, 'VU', '2008-11-01'  
 'bambi', '2008-05-02', 5  
 '2008-05-02', true, 'China', 'discover@wwl.com', '2010-09-03', 5  
+``` sql
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('golden masked owl','Tyto aurantia', 2500,'EN', '2008-11-01');
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('ring-tailed lemur','Lemur catta',	2400,	'EN', '2008-11-01');
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('koala', 'Phascolarctos cinereus', 43000, 'VU', '2008-11-01');
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('black rhino', 'Diceros bicornis', 4880, 'CR', '2008-11-01');
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('bonobos', 'Pan paniscus', 10000, 'EN', '2008-11-01');
+INSERT INTO species (common_name, scientific_name, population, status_code, record_created)
+ VALUES ('arctic fox', 'Vulpes lagopus', 300000, 'VU', '2008-11-01');
+ ```
 ### Status Codes:
 CR, EN, VU\
 status: "Critically endangered"\
