@@ -32,7 +32,9 @@ function Species() {
             <td>{common_name}</td>
             <td>{scientific_name}</td>
             <td>{population}</td>
-            <td>{status_code}</td>
+            <td>{status_code==="CR"?"Critically endangered" :
+            status_code==="EN"?"Endangered":
+            status_code==="VU"?"Vulnerable":"Unknown"}</td>
           </tr>)
         }
       </table>
