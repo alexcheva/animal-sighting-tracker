@@ -5,6 +5,9 @@ const port = 9001;
 
 app.use(cors());
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //connect to postgres
 const pgp = require("pg-promise")({});
 const db = pgp("postgres://localhost:5432/animals");
@@ -81,6 +84,18 @@ app.post('/', function (req, res) {
   res.send('POST request to the homepage')
 });
 
+app.post('/addAnimal', function (req, res) {
+  const animal = req.body;
+  db.none('INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ($1, $2, $3, $4, $5)', [animal.common_name, animal.scientific_name, animal.population, animal.status_code, animal.record_created])
+  .then(() => {
+      // success
+      console.log('SUCCESS: User is added to the database')
+  })
+  .catch(error => {
+      // error
+      console.log('ERROR:', error)
+  });
+});
 app.post('/addIndividual', function (req, res) {
   //res.send('POST request to the homepage')
   const ind = req.body;
@@ -92,16 +107,14 @@ app.post('/addIndividual', function (req, res) {
   });
 });
 
-app.post('/addAnimal', function (req, res) {
-  const animal = req.body;
-  db.none('INSERT INTO species (common_name, scientific_name, population, status_code, record_created) VALUES ($1, $2, $3, $4, $5)', [animal.common_name, animal.scientific_name, animal.population, animal.status_code, animal.record_created])
-  .then(() => {
-      // success
-      console.log('SUCCESS: User is added to the database')
+app.post('/addSighting', async (req, res) => {
+  //res.send('POST request to the homepage')
+  const { id, seen, healthy, location, email, record_created, animal_id  } = req.body;
+  db.none('INSERT INTO sightings (seen, healthy, location, email, record_created, animal_id) values ($1,$2,$3,$4,$5,$6)',[seen, healthy, location, email, record_created, animal_id]).then(data => {
+      console.log("SUCCESS: Sighting is added to the database"); // print new sight id;
   })
   .catch(error => {
-      // error
-      console.log('ERROR:', error)
+      console.log('ERROR:', error); // print error;
   });
 });
 
