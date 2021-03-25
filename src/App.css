@@ -31,6 +31,32 @@ p.lead {
 nav {
   text-align: end;
 }
+section#species{
+  background-image: url('./add_species.jpg');
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-color: #ededed;
+}
+.from{
+  background-color: #009688;
+  border-radius: 9px;
+  border: 1px solid rgb(26, 16, 16);
+  padding: 15px;
+}
+section#individual{
+  background-image: url('./add_individual.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-color: #efeff1;
+}
+section#sighting{
+  background-image: url('./sigtings.jpg');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-color: #bfe0e5;
+}
+
 h2{
   font-family: 'Ranchers', cursive;
   padding-top: 1.5rem;
@@ -115,11 +141,13 @@ input[type="submit"] {
   letter-spacing: 0.025em;
   color: #000429;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 input[type="submit"]:active {
   background: #1cccfb;
 }
 section.data {
+  background-color: #d9f7ff;
   padding-bottom: 2em;
 }
 @keyframes App-logo-spin {

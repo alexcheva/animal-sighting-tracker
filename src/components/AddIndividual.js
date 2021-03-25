@@ -37,36 +37,40 @@ const AddIndividualForm = () => {
     getSpecies();
   }, []);
   return (
-    <section id="individuals" className="container-fluid">
+    <section id="individual" className="container-fluid">
       <div className="container">
-      <div className="form col-xl-4 col-lg-4 col-xm-12 col-md-6">
-      <h2>Add Individual:</h2>
-      <form onSubmit={submitForm}>
-        <div className="form-group mb-2">
-          <label>Nickname:
-          <input
-            className="form-control"
-            type="text"
-            name="nickname"
-            onChange={(e) => setNickname(e.target.value)}
-          /></label>
-        </div>
-        <div className="form-group mb-2">
-          <label>Species:
-          <select
-            className="form-control"
-            name="species_id"
-            onChange={(e) => setSpeciesID(e.target.value)}
-          >
-            {species.map(({ id, common_name }) => (
-              <option value={id}>{common_name}</option>
-            ))}
-          </select></label>
-        </div>
-        <input type="submit" value="Add Individual" />
+        <div className="form col-xl-4 col-lg-4 col-xm-12 col-md-6">
+          <h2>Add Individual:</h2>
+          <form onSubmit={submitForm}>
+            <div className="form-group mb-2">
+              <label>
+                Nickname:
+                <input
+                  className="form-control"
+                  type="text"
+                  name="nickname"
+                  onChange={(e) => setNickname(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="form-group mb-2">
+              <label>
+                Species:
+                <select
+                  className="form-control"
+                  name="species_id"
+                  onChange={(e) => setSpeciesID(e.target.value)}
+                >
+                  {species.map(({ id, common_name }) => (
+                    <option value={id}>{common_name}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <input type="submit" value="Add Individual" />
           </form>
         </div>
-        </div>
+      </div>
     </section>
   );
 };

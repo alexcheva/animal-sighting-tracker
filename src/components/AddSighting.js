@@ -50,7 +50,7 @@ const AddSightingForm = () => {
           <form onSubmit={submitForm}>
             <div className="form-group mb-2">
               <label>
-                Animal nickname:
+                Animal nickname:</label>
                 <select
                   className="form-control"
                   name="animal_id"
@@ -60,33 +60,33 @@ const AddSightingForm = () => {
                     <option value={id}>{nickname}</option>
                   ))}
                 </select>
-              </label>
+              
             </div>
             <div className="form-group mb-2">
               <label>
-                Date seen:
+                Date seen:</label>
                 <input
                   className="form-control"
                   type="date"
                   name="seen"
                   onChange={(e) => setSeen(e.target.value)}
                 />
-              </label>
+              
             </div>
             <div className="form-group mb-2">
               <label>
-                Location seen:
+                Location seen:</label>
                 <input
                   className="form-control"
                   type="text"
                   name="location"
                   onChange={(e) => setLocation(e.target.value)}
                 />
-              </label>
+              
             </div>
             <div className="form-group mb-2">
               <label>
-                Did it look healthy?
+                Did it look healthy?</label>
                 <select
                   className="form-control"
                   name="healthy"
@@ -95,18 +95,18 @@ const AddSightingForm = () => {
                   <option value={true}>Yes</option>
                   <option value={false}>No</option>
                 </select>
-              </label>
+              
             </div>
             <div className="form-group mb-2">
               <label>
-                Your Email:
+                Your Email:</label>
                 <input
                   className="form-control"
                   type="email"
                   name="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-              </label>
+              
             </div>
             <input type="submit" value="Add Sighting" />
           </form>
