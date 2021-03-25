@@ -37,7 +37,9 @@ const AddIndividualForm = () => {
     getSpecies();
   }, []);
   return (
-    <section>
+    <section id="individuals" className="container-fluid">
+      <div className="container">
+      <div className="form col-xl-4 col-lg-4 col-xm-12 col-md-6">
       <h2>Add Individual:</h2>
       <form onSubmit={submitForm}>
         <div className="form-group mb-2">
@@ -62,7 +64,9 @@ const AddIndividualForm = () => {
           </select></label>
         </div>
         <input type="submit" value="Add Individual" />
-      </form>
+          </form>
+        </div>
+        </div>
     </section>
   );
 };

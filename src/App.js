@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Header from './components/Header';
+//import Header from './components/Header';
 import Species from './components/ShowSpecies';
 import AddAnimal from './components/AddAnimal';
 import Individuals from './components/ShowIndividuals';
@@ -21,28 +21,27 @@ function App() {
     
     <Router>
       <header id="header" className="jumbotron jumbotron-fluid">
-      <div className="container">
-        <h1 id="name" className="display-4">Animal Sighting Tracker</h1>
-        <p className="lead">Track engangered species.</p>
-      
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Species</Link>
-            </li>
-            <li>
-              <Link to="/individuals">Individuals</Link>
-            </li>
-            <li>
-              <Link to="/sightings">Sightings</Link>
-            </li>
-          </ul>
+        <div className="container">
+          <h1 id="name" className="display-4">Animal Sighting Tracker</h1>
+          <p className="lead">Track engangered species.</p>
+          <nav>
+            <ul>
+              <li key={1}>
+                <Link to="/">Species</Link>
+              </li>
+              <li key={2}>
+                <Link to="/individuals">Individuals</Link>
+              </li>
+              <li key={3}>
+                <Link to="/sightings">Sightings</Link>
+              </li>
+            </ul>
           </nav>
-          </div>
-        </header>
+        </div>
+      </header>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-            <div className="container">
+            
         <Switch>
           
             <Route path="/individuals">
@@ -59,7 +58,7 @@ function App() {
             </Route>
           
         </Switch>
-        </div>
+        
         <Footer />
         
     </Router>

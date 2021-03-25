@@ -14,6 +14,7 @@ header#header {
   background-position: center;
   background-size: cover;
   height: 28rem;
+  margin-bottom: 0rem;
 }
 h1#name, .lead {
   font-family: 'Ranchers', cursive;
@@ -32,10 +33,14 @@ nav {
 }
 h2{
   font-family: 'Ranchers', cursive;
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.1rem;
   color: #01443e;
   letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 3px #009688;
+}
+form {
+  margin-bottom: 2rem;
 }
 .App-logo {
   height: 40vmin;
@@ -52,6 +57,7 @@ thead {
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
   background-color: #b2eeff;
 }
+
 .table thead th {
   border-bottom: 1px solid rgb(26, 16, 16);
 }
@@ -82,7 +88,7 @@ thead {
 }
 li {
   display: inline-block;
-  padding: 15px;
+  padding: 0.8rem;
 }
 
 a {
@@ -108,6 +114,10 @@ input[type="submit"] {
   border-color: #673ab7;
   letter-spacing: 0.025em;
   color: #000429;
+  margin-top: 1rem;
+}
+input[type="submit"]:active {
+  background: #1cccfb;
 }
 section.data {
   padding-bottom: 2em;
@@ -122,7 +132,7 @@ section.data {
 }
 footer {
   background-color: #47b8d8;
-  padding: 20px;
+  padding: 1.2rem;
   text-align: end;
 }
 footer a{

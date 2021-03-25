@@ -12,7 +12,7 @@ const AddAnimalForm = () => {
       common_name,
       scientific_name,
       population,
-      status_code,
+      status_code
     };
 
     fetch(
@@ -31,38 +31,41 @@ const AddAnimalForm = () => {
       .catch((e) => console.error(e.stack));
   };
   return (
-    <section className="col-4" >
+    
+    <section id="species" className="container-fluid">
+      <div className="container">
+      <div className="form col-xl-4 col-lg-4 col-xm-12 col-md-6">
       <h2>Add Species:</h2>
       <form onSubmit={submitForm}>
         <div className="form-group mb-2">
-          <label>Common name:
+          <label>Common name:</label>
           <input
             className="form-control"
             type="text"
             name="common_name"
             onChange={(e) => setCommon_name(e.target.value)}
-          /></label>
+          />
         </div>
         <div className="form-group mb-2">
-          <label>Scientific name:
+          <label>Scientific name:</label>
           <input
             className="form-control"
             type="text"
             name="scientific_name"
             onChange={(e) => setScientific_name(e.target.value)}
-          /></label>
+          />
         </div>
         <div className="form-group mb-2">
-          <label>Population:
+          <label>Population:</label>
           <input
             className="form-control"
             type="number"
             name="population"
             onChange={(e) => setPopulation(e.target.value)}
-          /></label>
+          />
         </div>
         <div className="form-group mb-2">
-          <label>Endangered Status:
+          <label>Endangered Status:</label>
           <select
             className="form-control"
             name="status_code"
@@ -72,11 +75,13 @@ const AddAnimalForm = () => {
             <option value="CR">Critically endangered</option>
             <option value="EN">Endangered</option>
             <option value="VU">Vulnerable</option>
-          </select></label>
+          </select>
         </div>
         <input type="submit" value="Add Species" />
-      </form>
-    </section>
+        </form>
+        </div>
+      </div>
+      </section>
   );
 };
 export default AddAnimalForm;
