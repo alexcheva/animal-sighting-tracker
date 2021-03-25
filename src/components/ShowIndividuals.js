@@ -19,10 +19,10 @@ function Individuals() {
   )
 
   return (
-    <section>
+    <section class="data">
       <h2>Individuals:</h2>
-      <table width="90%" align="center">
-        <thead>
+      <table class="table table-striped table-hover">
+        <thead class="thead-light">
           <th>Animal Nickname:</th>
           <th>Species Common Name:</th>
           <th>Species Scientific Name:</th>
@@ -33,7 +33,7 @@ function Individuals() {
         <tbody>
         {individuals.map(({ id, nickname, common_name, scientific_name, seen, healthy, location }) =>
           <tr key={id}>
-            <td>{nickname}</td>
+            <th scope="row">{nickname}</th>
             <td>{common_name}</td>
             <td>{scientific_name}</td>
             <td>{seen?new Date(seen).toDateString():""}</td>

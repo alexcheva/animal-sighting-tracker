@@ -34,27 +34,35 @@ const AddAnimalForm = () => {
     <section>
       <h2>Add Species:</h2>
       <form onSubmit={submitForm}>
-        <label>
-          Common name:
-          <input type="text" name="common_name" onChange={e => setCommon_name(e.target.value)} />
-        </label>
-        <label>
-            Scientific name:
-          <input type="text" name="scientific_name" onChange={e => setScientific_name(e.target.value)} />
-        </label>
-        <label>
-          Population:
-          <input type="number" name="population" onChange={e => setPopulation(e.target.value)} />
-        </label>
-        <label>
-          Endangered Status:
-          <select name="status_code" onChange={e => setStatusCode(e.target.value)}>
+        <div class="form-group mb-2">
+        <label htmlFor="common_name">
+          Common name:</label>
+          <input class="form-control" type="text" name="common_name" onChange={e => setCommon_name(e.target.value)} />
+        
+        </div>
+        <div class="form-group mb-2">
+        <label htmlFor="scientific_name">
+            Scientific name:</label>
+          <input class="form-control" type="text" name="scientific_name" onChange={e => setScientific_name(e.target.value)} />
+        
+        </div>
+        <div class="form-group mb-2">
+        <label htmlFor="population">
+          Population:</label>
+          <input class="form-control" type="number" name="population" onChange={e => setPopulation(e.target.value)} />
+        
+        </div>
+        <div class="form-group mb-2">
+          <label htmlFor="status_code">
+          Endangered Status:</label>
+          <select class="form-control" name="status_code" onChange={e => setStatusCode(e.target.value)}>
             <option value="NA">Unknown</option>
             <option value="CR">Critically endangered</option>
             <option value="EN">Endangered</option>
             <option value="VU">Vulnerable</option>
           </select>
-        </label>
+          
+        </div>
         <input type="submit" value="Add Species" />
       </form>
     </section>

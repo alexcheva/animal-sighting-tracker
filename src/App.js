@@ -8,17 +8,23 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import Header from './components/Header';
 import Species from './components/ShowSpecies';
 import AddAnimal from './components/AddAnimal';
 import Individuals from './components/ShowIndividuals';
 import AddIndividualForm from './components/AddIndividual';
 import Sightings from './components/ShowSightings';
 import AddSightingForm from './components/AddSighting';
+import Footer from './components/Footer';
 function App() {
   return (
+    
     <Router>
-      <div class="App">
+      <header id="header" class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 id="name" class="display-4">Animal Sighting Tracker</h1>
+        <p class="lead">Track engangered species.</p>
+      
         <nav>
           <ul>
             <li>
@@ -31,26 +37,31 @@ function App() {
               <Link to="/sightings">Sightings</Link>
             </li>
           </ul>
-        </nav>
-
+          </nav>
+          </div>
+        </header>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+            <div class="container">
         <Switch>
-          <Route path="/individuals">
-            <AddIndividualForm />
-            <Individuals />
-            
-          </Route>
-          <Route path="/sightings">
-            <AddSightingForm />
-            <Sightings />
-          </Route>
-          <Route path="/">
-            <AddAnimal />
-            <Species />
-          </Route>
+          
+            <Route path="/individuals">
+              <AddIndividualForm />
+              <Individuals />
+            </Route>
+            <Route path="/sightings">
+              <AddSightingForm />
+              <Sightings />
+            </Route>
+            <Route path="/">
+              <AddAnimal />
+              <Species />
+            </Route>
+          
         </Switch>
-      </div>
+        </div>
+        <Footer />
+        
     </Router>
   );
 }

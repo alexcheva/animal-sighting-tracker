@@ -18,10 +18,10 @@ function Species() {
   )
 
   return (
-    <section>
+    <section class="data">
       <h2>Species:</h2>
-      <table width="60%" align="center">
-        <thead>
+      <table class="table table-striped table-hover">
+        <thead class="thead-light">
           <th>Common Name:</th>
           <th>Scientific Name:</th>
           <th>Population:</th>
@@ -30,7 +30,7 @@ function Species() {
         <tbody>
           {species.map(({ id, common_name, scientific_name, population, status_code }) =>
             <tr key={id}>
-              <td>{common_name}</td>
+              <th scope="row">{common_name}</th>
               <td>{scientific_name}</td>
               <td>{population}</td>
               <td>{status_code==="CR"?"Critically endangered" :

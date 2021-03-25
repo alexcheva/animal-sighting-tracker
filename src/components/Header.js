@@ -1,10 +1,13 @@
 const Header = () => {
-  <header id="header">
-    <h1 id="name">Animal Sighting Tracker</h1>
-    <nav>
-        <a href="" class="link">Species</a>
-        <a href="" class="link">Individuals</a>
-        <a href="" class="link">Sighting</a>
-    </nav>
+  return (
+  <header id="header" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 id="name" class="display-4">Animal Sighting Tracker</h1>
+      <p class="lead">Track engangered species.</p>
+    </div>
   </header>
+  );
+  
 } 
+
+export default Header;

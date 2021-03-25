@@ -46,21 +46,25 @@ const AddIndividualForm = () => {
   return (
     <section>
       <h2>Add Individual:</h2>
-      <form onSubmit={submitForm}>
+      <form class="form-inline" onSubmit={submitForm}>
+        <div class="form-group mb-2">
         <label>
           Nickname:
-          <input type="text" name="nickname" onChange={e => setNickname(e.target.value)} />
-        </label>
+          <input class="form-control"type="text" name="nickname" onChange={e => setNickname(e.target.value)} />
+          </label>
+        </div>
+        <div class="form-group mb-2">
         <label>
           Species:
-          <select name="species_id" onChange={e => setSpeciesID(e.target.value)}>
+          <select  class="form-control" name="species_id" onChange={e => setSpeciesID(e.target.value)}>
           {species.map(({ id, common_name }) =>
             <option value={id}>{common_name}</option>
              )
             }
           </select>
         </label>
-        <input type="submit" value="Add Individual" />
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Add Individual</button>
       </form>
     </section>
   );

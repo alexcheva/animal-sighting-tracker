@@ -19,10 +19,10 @@ function Sightings() {
   )
 
   return (
-    <section>
+    <section class="data">
       <h2>Sightings:</h2>
-      <table width="90%" align="center">
-        <thead>
+      <table class="table table-striped table-hover">
+        <thead class="thead-light">
           <th>Animal Nickname:</th>
           <th>Species:</th>
           <th>Seen on:</th>
@@ -33,7 +33,7 @@ function Sightings() {
         <tbody>
           {sightings.map(({ id, nickname, common_name, seen, healthy, location, email, animal_id }) =>
             <tr key={id}>
-              <td>{nickname}</td>
+              <th scope="row">{nickname}</th>
               <td>{common_name}</td>
               <td>{new Date(seen).toDateString()}</td>
               <td>{healthy? "yes" : "no"}</td>
