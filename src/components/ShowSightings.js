@@ -19,10 +19,10 @@ function Sightings() {
   )
 
   return (
-    <section class="data">
+    <section className="data">
       <h2>Sightings:</h2>
-      <table class="table table-striped table-hover">
-        <thead class="thead-light">
+      <table className="table table-striped table-hover">
+        <thead className="thead-light">
           <th>Animal Nickname:</th>
           <th>Species:</th>
           <th>Seen on:</th>

@@ -46,11 +46,11 @@ const AddSightingForm = () => {
     <section>
       <h2>Add Sighting:</h2>
       <form onSubmit={submitForm}>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label>
             Animal nickname:
             <select
-              class="form-control"
+              className="form-control"
               name="animal_id"
               onChange={(e) => setAnimalID(e.target.value)}
             >
@@ -60,33 +60,33 @@ const AddSightingForm = () => {
             </select>
           </label>
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label>
             Date seen:
             <input
-              class="form-control"
+              className="form-control"
               type="date"
               name="seen"
               onChange={(e) => setSeen(e.target.value)}
             />
           </label>
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label>
             Location seen:
             <input
-              class="form-control"
+              className="form-control"
               type="text"
               name="location"
               onChange={(e) => setLocation(e.target.value)}
             />
           </label>
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label>
             Did it look healthy?
             <select
-              class="form-control"
+              className="form-control"
               name="healthy"
               onChange={(e) => setHealth(e.target.value)}
             >
@@ -95,11 +95,11 @@ const AddSightingForm = () => {
             </select>
           </label>
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label>
             Your Email:
             <input
-              class="form-control"
+              className="form-control"
               type="email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}

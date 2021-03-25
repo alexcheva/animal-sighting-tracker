@@ -19,10 +19,10 @@ function Individuals() {
   )
 
   return (
-    <section class="data">
+    <section className="data">
       <h2>Individuals:</h2>
-      <table class="table table-striped table-hover">
-        <thead class="thead-light">
+      <table className="table table-striped table-hover">
+        <thead className="thead-light">
           <th>Animal Nickname:</th>
           <th>Species Common Name:</th>
           <th>Species Scientific Name:</th>

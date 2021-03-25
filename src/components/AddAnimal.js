@@ -34,28 +34,28 @@ const AddAnimalForm = () => {
     <section>
       <h2>Add Species:</h2>
       <form onSubmit={submitForm}>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
         <label htmlFor="common_name">
           Common name:</label>
-          <input class="form-control" type="text" name="common_name" onChange={e => setCommon_name(e.target.value)} />
+          <input className="form-control" type="text" name="common_name" onChange={e => setCommon_name(e.target.value)} />
         
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
         <label htmlFor="scientific_name">
             Scientific name:</label>
-          <input class="form-control" type="text" name="scientific_name" onChange={e => setScientific_name(e.target.value)} />
+          <input className="form-control" type="text" name="scientific_name" onChange={e => setScientific_name(e.target.value)} />
         
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
         <label htmlFor="population">
           Population:</label>
-          <input class="form-control" type="number" name="population" onChange={e => setPopulation(e.target.value)} />
+          <input className="form-control" type="number" name="population" onChange={e => setPopulation(e.target.value)} />
         
         </div>
-        <div class="form-group mb-2">
+        <div className="form-group mb-2">
           <label htmlFor="status_code">
           Endangered Status:</label>
-          <select class="form-control" name="status_code" onChange={e => setStatusCode(e.target.value)}>
+          <select className="form-control" name="status_code" onChange={e => setStatusCode(e.target.value)}>
             <option value="NA">Unknown</option>
             <option value="CR">Critically endangered</option>
             <option value="EN">Endangered</option>

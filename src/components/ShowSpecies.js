@@ -18,10 +18,10 @@ function Species() {
   )
 
   return (
-    <section class="data">
+    <section className="data">
       <h2>Species:</h2>
-      <table class="table table-striped table-hover">
-        <thead class="thead-light">
+      <table className="table table-striped table-hover">
+        <thead className="thead-light">
           <th>Common Name:</th>
           <th>Scientific Name:</th>
           <th>Population:</th>
