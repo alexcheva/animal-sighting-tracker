@@ -18,7 +18,7 @@ import AddSightingForm from './components/AddSighting';
 function App() {
   return (
     <Router>
-      <div>
+      <div class="App">
         <nav>
           <ul>
             <li>
