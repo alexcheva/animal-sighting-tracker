@@ -131,8 +131,9 @@ app.post('/addIndividual', function (req, res) {
 
 app.post('/addSighting', async (req, res) => {
   //res.send('POST request to the homepage')
-  const { id, seen, healthy, location, email, record_created, animal_id  } = req.body;
-  db.none('INSERT INTO sightings (seen, healthy, location, email, record_created, animal_id) values ($1,$2,$3,$4,$5,$6)',[seen, healthy, location, email, record_created, animal_id]).then(data => {
+  const today = new Date();
+  const { id, seen, healthy, location, email, animal_id  } = req.body;
+  db.none('INSERT INTO sightings (seen, healthy, location, email, record_created, animal_id) values ($1,$2,$3,$4,$5,$6)',[seen, healthy, location, email, today, animal_id]).then(data => {
       console.log("SUCCESS: Sighting is added to the database"); // print new sight id;
   })
   .catch(error => {

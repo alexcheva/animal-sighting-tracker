@@ -6,6 +6,7 @@ import AddAnimal from './components/AddAnimal';
 import Individuals from './components/ShowIndividuals';
 import AddIndividualForm from './components/AddIndividual';
 import Sightings from './components/ShowSightings';
+import AddSightingForm from './components/AddSighting';
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
       <Individuals />
       <AddIndividualForm />
       <Sightings />
+      <AddSightingForm />
     </div>
   );
 }

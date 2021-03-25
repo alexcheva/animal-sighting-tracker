@@ -34,8 +34,9 @@ function Species() {
               <td>{scientific_name}</td>
               <td>{population}</td>
               <td>{status_code==="CR"?"Critically endangered" :
-              status_code==="EN"?"Endangered":
-              status_code==="VU"?"Vulnerable":"Unknown"}</td>
+                  status_code==="EN"?"Endangered":
+                  status_code === "VU" ? "Vulnerable" : "Unknown"}
+              </td>
             </tr>)
             }
         </tbody>
