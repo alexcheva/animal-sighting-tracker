@@ -21,6 +21,7 @@ h1#name, .lead {
   color: #89f749;
   letter-spacing: 0.09rem;
   text-shadow: 3px 3px blueviolet;
+  padding-top: 1.05rem;
 }
 p.lead {
   font-size: 1.85rem;
@@ -108,6 +109,9 @@ input[type="submit"] {
   letter-spacing: 0.025em;
   color: #000429;
 }
+section.data {
+  padding-bottom: 2em;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -119,6 +123,7 @@ input[type="submit"] {
 footer {
   background-color: #47b8d8;
   padding: 20px;
+  text-align: end;
 }
 footer a{
   color: #27ff00;

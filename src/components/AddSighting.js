@@ -106,7 +106,7 @@ const AddSightingForm = () => {
             />
           </label>
         </div>
-        <input type="submit" value="Add Individual" />
+        <input type="submit" value="Add Sighting" />
       </form>
     </section>
   );

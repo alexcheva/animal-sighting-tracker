@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const AddAnimalForm = () => {
   const [common_name, setCommon_name] = React.useState("");
@@ -12,7 +12,7 @@ const AddAnimalForm = () => {
       common_name,
       scientific_name,
       population,
-      status_code
+      status_code,
     };
 
     fetch(
@@ -31,37 +31,48 @@ const AddAnimalForm = () => {
       .catch((e) => console.error(e.stack));
   };
   return (
-    <section>
+    <section className="col-4" >
       <h2>Add Species:</h2>
       <form onSubmit={submitForm}>
         <div className="form-group mb-2">
-        <label htmlFor="common_name">
-          Common name:</label>
-          <input className="form-control" type="text" name="common_name" onChange={e => setCommon_name(e.target.value)} />
-        
+          <label>Common name:
+          <input
+            className="form-control"
+            type="text"
+            name="common_name"
+            onChange={(e) => setCommon_name(e.target.value)}
+          /></label>
         </div>
         <div className="form-group mb-2">
-        <label htmlFor="scientific_name">
-            Scientific name:</label>
-          <input className="form-control" type="text" name="scientific_name" onChange={e => setScientific_name(e.target.value)} />
-        
+          <label>Scientific name:
+          <input
+            className="form-control"
+            type="text"
+            name="scientific_name"
+            onChange={(e) => setScientific_name(e.target.value)}
+          /></label>
         </div>
         <div className="form-group mb-2">
-        <label htmlFor="population">
-          Population:</label>
-          <input className="form-control" type="number" name="population" onChange={e => setPopulation(e.target.value)} />
-        
+          <label>Population:
+          <input
+            className="form-control"
+            type="number"
+            name="population"
+            onChange={(e) => setPopulation(e.target.value)}
+          /></label>
         </div>
         <div className="form-group mb-2">
-          <label htmlFor="status_code">
-          Endangered Status:</label>
-          <select className="form-control" name="status_code" onChange={e => setStatusCode(e.target.value)}>
+          <label>Endangered Status:
+          <select
+            className="form-control"
+            name="status_code"
+            onChange={(e) => setStatusCode(e.target.value)}
+          >
             <option value="NA">Unknown</option>
             <option value="CR">Critically endangered</option>
             <option value="EN">Endangered</option>
             <option value="VU">Vulnerable</option>
-          </select>
-          
+          </select></label>
         </div>
         <input type="submit" value="Add Species" />
       </form>
