@@ -40,7 +40,6 @@ const AddSightingForm = () => {
     ).then(
       data => {
         setIndividuals(data);
-        console.log(data);
         setAnimalID(data[0].id);}
     )
   }

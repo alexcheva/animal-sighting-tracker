@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddIndividualForm = () => {
   const [nickname, setNickname] = React.useState("");
-  const [species_id, setSpeciesID] = React.useState("");
+  const [species_id, setSpeciesID] = React.useState(0);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -31,7 +31,10 @@ const AddIndividualForm = () => {
     fetch('http://localhost:9001/species').then(
       res => res.json()
     ).then(
-      data => setSpecies(data)
+      data => {
+        setSpecies(data);
+        setSpeciesID(data[0].id);
+      }
     )
   }
   //console.log(species);
