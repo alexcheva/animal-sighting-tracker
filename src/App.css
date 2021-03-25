@@ -44,14 +44,14 @@ section#species{
   padding: 15px;
 }
 section#individual{
-  background-image: url('./add_individual.jpg');
+  background-image: url('./individual.jpg');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position-x: center;
-  background-color: #efeff1;
+  background-position-x: right;
+  background-color: #c2e5eb;
 }
 section#sighting{
-  background-image: url('./sigtings.jpg');
+  background-image: url('./sightings.jpg');
   background-repeat: no-repeat;
   background-position-x: right;
   background-color: #bfe0e5;
