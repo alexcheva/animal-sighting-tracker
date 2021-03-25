@@ -21,14 +21,14 @@ function Individuals() {
   return (
     <section className="data">
       <h2>Individuals:</h2>
-      <table className="table table-striped table-hover">
-        <thead className="thead-light">
+      <table className="table table-striped">
+        <thead>
           <th>Animal Nickname:</th>
           <th>Species Common Name:</th>
           <th>Species Scientific Name:</th>
           <th>Last seen:</th>
           <th>Location:</th>
-          <th>Healthy</th>
+          <th>Healthy:</th>
         </thead>
         <tbody>
         {individuals.map(({ id, nickname, common_name, scientific_name, seen, healthy, location }) =>

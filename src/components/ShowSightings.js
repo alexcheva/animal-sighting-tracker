@@ -21,8 +21,8 @@ function Sightings() {
   return (
     <section className="data">
       <h2>Sightings:</h2>
-      <table className="table table-striped table-hover">
-        <thead className="thead-light">
+      <table className="table table-striped">
+        <thead>
           <th>Animal Nickname:</th>
           <th>Species:</th>
           <th>Seen on:</th>

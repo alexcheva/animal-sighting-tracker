@@ -33,6 +33,23 @@ h2{
   height: 40vmin;
   pointer-events: none;
 }
+table, td, th , thead th{
+  border: 1px solid rgb(26, 16, 16);
+}
+thead {
+  color: #031900;
+  background: #4bb8d7;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: #b2eeff;
+}
+.table thead th {
+  border-bottom: 1px solid rgb(26, 16, 16);
+}
+.table th {
+  border-top: 1px solid rgb(26, 16, 16);
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
