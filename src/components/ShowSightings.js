@@ -22,24 +22,26 @@ function Sightings() {
     <section>
       <h2>Sightings:</h2>
       <table width="90%" align="center">
-        <tr>
+        <thead>
           <th>Animal Nickname:</th>
           <th>Species:</th>
           <th>Seen on:</th>
           <th>Healthy:</th>
           <th>Location seen:</th>
           <th>Queries:</th>
-        </tr>
-        {sightings.map(({ id, nickname, common_name, seen, healthy, location, email, animal_id }) =>
-          <tr key={id}>
-            <td>{nickname}</td>
-            <td>{common_name}</td>
-            <td>{new Date(seen).toDateString()}</td>
-            <td>{healthy? "yes" : "no"}</td>
-            <td>{location}</td>
-            <td>{email}</td>
-          </tr>)
-        }
+        </thead>
+        <tbody>
+          {sightings.map(({ id, nickname, common_name, seen, healthy, location, email, animal_id }) =>
+            <tr key={id}>
+              <td>{nickname}</td>
+              <td>{common_name}</td>
+              <td>{new Date(seen).toDateString()}</td>
+              <td>{healthy? "yes" : "no"}</td>
+              <td>{location}</td>
+              <td>{email}</td>
+            </tr>)
+            }
+        </tbody>
       </table>
     </section>
   );

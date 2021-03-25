@@ -21,22 +21,24 @@ function Species() {
     <section>
       <h2>Animals</h2>
       <table width="60%" align="center">
-        <tr>
+        <thead>
           <th>Common Name:</th>
           <th>Scientific Name:</th>
           <th>Population:</th>
           <th>Endangered Status:</th>
-        </tr>
-        {species.map(({ id, common_name, scientific_name, population, status_code }) =>
-          <tr key={id}>
-            <td>{common_name}</td>
-            <td>{scientific_name}</td>
-            <td>{population}</td>
-            <td>{status_code==="CR"?"Critically endangered" :
-            status_code==="EN"?"Endangered":
-            status_code==="VU"?"Vulnerable":"Unknown"}</td>
-          </tr>)
-        }
+        </thead>
+        <tbody>
+          {species.map(({ id, common_name, scientific_name, population, status_code }) =>
+            <tr key={id}>
+              <td>{common_name}</td>
+              <td>{scientific_name}</td>
+              <td>{population}</td>
+              <td>{status_code==="CR"?"Critically endangered" :
+              status_code==="EN"?"Endangered":
+              status_code==="VU"?"Vulnerable":"Unknown"}</td>
+            </tr>)
+            }
+        </tbody>
       </table>
     </section>
   );

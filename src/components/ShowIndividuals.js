@@ -22,14 +22,15 @@ function Individuals() {
     <section>
       <h2>Individuals:</h2>
       <table width="90%" align="center">
-        <tr>
+        <thead>
           <th>Animal Nickname:</th>
           <th>Species Common Name:</th>
           <th>Species Scientific Name:</th>
           <th>Last seen:</th>
           <th>Location:</th>
           <th>Healthy</th>
-        </tr>
+        </thead>
+        <tbody>
         {individuals.map(({ id, nickname, common_name, scientific_name, seen, healthy, location }) =>
           <tr key={id}>
             <td>{nickname}</td>
@@ -39,7 +40,8 @@ function Individuals() {
             <td>{location}</td>
             <td>{healthy===true? "yes" : healthy===false?"no" : "unknown"}</td>
           </tr>)
-        }
+          }
+        </tbody>
       </table>
     </section>
   );
