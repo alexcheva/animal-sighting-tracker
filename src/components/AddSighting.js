@@ -54,7 +54,7 @@ const AddSightingForm = () => {
       <h2>Add Sighting:</h2>
       <form onSubmit={submitForm}>
         <label>
-          Individual Animal:
+          Animal nickname:
           <select name="animal_id" onChange={e => setAnimalID(e.target.value)}>
           {individuals.map(({ id, nickname }) =>
             <option value={id}>{nickname}</option>

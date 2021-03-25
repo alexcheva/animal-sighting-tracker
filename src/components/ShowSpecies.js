@@ -19,7 +19,7 @@ function Species() {
 
   return (
     <section>
-      <h2>Animals</h2>
+      <h2>Species:</h2>
       <table width="60%" align="center">
         <thead>
           <th>Common Name:</th>
