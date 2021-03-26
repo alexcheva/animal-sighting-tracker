@@ -1,9 +1,9 @@
 const Header = () => {
   return (
-  <header id="header" class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 id="name" class="display-4">Animal Sighting Tracker</h1>
-      <p class="lead">Track engangered species.</p>
+  <header id="header" className="jumbotron jumbotron-fluid">
+    <div className="container">
+      <h1 id="name" className="display-4">Animal Sighting Tracker</h1>
+      <p className="lead">Track engangered species.</p>
     </div>
   </header>
   );

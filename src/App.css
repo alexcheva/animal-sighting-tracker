@@ -7,31 +7,89 @@
 }
 div#root {
   background-color: #d9f7ff;
+  font-weight: 500;
 }
 header#header {
   background-image: url('./header_img.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 545px;
+  height: 28rem;
+  margin-bottom: 0rem;
 }
 h1#name, .lead {
   font-family: 'Ranchers', cursive;
   text-align: right;
   color: #89f749;
+  letter-spacing: 0.09rem;
+  text-shadow: 3px 3px blueviolet;
+  padding-top: 1.05rem;
+}
+p.lead {
+  font-size: 1.85rem;
+  margin-bottom: 10px;
 }
 nav {
   text-align: end;
 }
+section#species{
+  background-image: url('./add_species.jpg');
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-color: #ededed;
+}
+.from{
+  background-color: #009688;
+  border-radius: 9px;
+  border: 1px solid rgb(26, 16, 16);
+  padding: 15px;
+}
+section#individual{
+  background-image: url('./individual.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-color: #c2e5eb;
+}
+section#sighting{
+  background-image: url('./sightings.jpg');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-color: #bfe0e5;
+}
+
 h2{
   font-family: 'Ranchers', cursive;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  color: #0a6325;
+  padding-top: 1.5rem;
+  padding-bottom: 1.1rem;
+  color: #01443e;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 3px #009688;
+}
+form {
+  margin-bottom: 2rem;
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+table, td, th , thead th{
+  border: 1px solid rgb(26, 16, 16);
+}
+thead {
+  color: #031900;
+  background: #4bb8d7;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: #b2eeff;
+}
+
+.table thead th {
+  border-bottom: 1px solid rgb(26, 16, 16);
+}
+.table th {
+  border-top: 1px solid rgb(26, 16, 16);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -49,6 +107,7 @@ h2{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-color: #47b8d8;
 }
 
 .App-link {
@@ -56,15 +115,41 @@ h2{
 }
 li {
   display: inline-block;
-  padding: 15px;
+  padding: 0.8rem;
 }
+
 a {
   text-decoration: none;
   font-weight: 600; 
-  color: #27ff00;
+}
+nav li a {
+  color: #ffeb00;
+  font-size: 1.3rem;
+  text-shadow: 2px 2px #7e0000;
+}
+nav li a:hover {
+  color: #ffeb00;
 }
 a:hover, a:focus {
   text-decoration: underline;
+}
+input[type="submit"] {
+  padding: 10px 15px;
+  font-weight: 600;
+  background: #7ed549;
+  border-radius: 9px;
+  border-color: #673ab7;
+  letter-spacing: 0.025em;
+  color: #000429;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+input[type="submit"]:active {
+  background: #1cccfb;
+}
+section.data {
+  background-color: #d9f7ff;
+  padding-bottom: 2em;
 }
 @keyframes App-logo-spin {
   from {
@@ -76,8 +161,13 @@ a:hover, a:focus {
 }
 footer {
   background-color: #47b8d8;
-  padding: 20px;
+  padding: 1.2rem;
+  text-align: end;
 }
 footer a{
   color: #27ff00;
+}
+img#footer-logo {
+  width: 90px;
+  float: left;
 }
