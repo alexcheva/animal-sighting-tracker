@@ -5,10 +5,10 @@ const AddIndividualForm = () => {
   const [species_id, setSpeciesID] = React.useState(0);
 
   const submitForm = async (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     const body = {
       nickname,
-      species_id,
+      species_id
     };
 
     fetch("http://localhost:9001/addIndividual", {

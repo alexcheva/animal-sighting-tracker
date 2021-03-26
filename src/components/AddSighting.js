@@ -8,7 +8,7 @@ const AddSightingForm = () => {
   const [email, setEmail] = React.useState("");
 
   const submitForm = async (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     const body = {
       seen,
       healthy,

@@ -7,7 +7,7 @@ const AddAnimalForm = () => {
   const [status_code, setStatusCode] = React.useState("");
 
   const submitForm = async (e) => {
-    e.preventDefault();
+   //e.preventDefault();
     const body = {
       common_name,
       scientific_name,
