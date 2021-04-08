@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = 9001;
+require('dotenv').config()
 
 app.use(cors());
 
@@ -10,12 +11,17 @@ app.use(express.urlencoded({ extended: true }));
 
 //connect to postgres
 const pgp = require("pg-promise")({});
-const db = pgp("postgres://localhost:5432/animals");
 
+//const db = pgp("postgres://localhost:5432/animals");
+//console.log(process.env.DB_URI);
+const db = pgp({
+  connectionString: process.env.DB_URI,
+  ssl: { rejectUnauthorized: false }
+});
 app.get("/species", async (req, res) => {
   try {
-    const events = await db.any("SELECT * FROM species;", [true]);
-    res.json(events);
+    const species = await db.any("SELECT * FROM species;", [true]);
+    res.json(species);
   } catch (e) {
     console.log(e);
   }
